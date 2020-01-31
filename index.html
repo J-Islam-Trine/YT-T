@@ -27,17 +27,19 @@
                 </div>
                 <div class="column auto">
                     <div class="container">
-                        <div class="field">
-                            <div class="control">
-                                <input type="text" name="" id="" class="input" placeholder="To Do">
-                            </div>
-                            
-                    </div>
-                    <div class="field">
-                        <div class="container has-text-centered">
-                            <a href="#" class="button is-primary">Add</a>
+                        <form action="#" class="form">
+                            <div class="field">
+                                <div class="control">
+                                    <input type="text" name="" id="textInput" class="input" placeholder="To Do">
+                                </div>
+                                
                         </div>
-                    </div>
+                        <div class="field">
+                            <div class="control has-text-centered">
+                                <button href="#" class="button is-primary" id='submitButton'>Add</button>
+                            </div>
+                        </div>
+                        </form>
                   
                 </div>
             </div>
@@ -54,11 +56,8 @@
                <div class="column is-offset-one-third is-one-third has-background-primary">
                 <div class="box">
                     <p class="title has-text-centered">Today</p>
-                    <ul class="list is-hoverable">
-                        <li class="list-item">Bonfire</li>
-                        <li class="list-item">Brazil</li>
-                        <li class="list-item">Bunny Rabbit</li>
-                        <li class="list-item">Byzantiam</li>
+                    <ul class="list is-hoverable" id="currrentList">
+                        
                     </ul>
                     <p class="subtitle has-text-centered">0 out of 4 is done</p>
 
