@@ -10,13 +10,14 @@
     <title>YT&T</title>
 </head>
 <body>
+    <!-- navigation bar -->
     <nav class="navbar is-primary">
         <div class="navbar-brand">
             <a href="#" class="navbar-item"><img src="img/logo.png" class="image is-256x256" alt="""></a>
         </div>
         
     </nav>
-
+    
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -33,16 +34,16 @@
                                     <input type="text" name="" id="textInput" class="input" placeholder="To Do">
                                 </div>
                                 
-                        </div>
-                        <div class="field">
-                            <div class="control has-text-centered">
-                                <button href="#" class="button is-primary" id='submitButton'>Add</button>
+                             </div>
+                            <div class="field">
+                                <div class="control has-text-centered">
+                                    <button href="#" class="button is-primary" id='submitButton'>Add</button>
+                                </div>
                             </div>
-                        </div>
                         </form>
                   
+                     </div>
                 </div>
-            </div>
             </div>
         </div>
     </section>
@@ -52,16 +53,14 @@
     <section class="section">
         <div class="container">
            <div class="columns">
-               
                <div class="column is-offset-one-third is-one-third has-background-primary">
-                <div class="box">
-                    <p class="title has-text-centered">Today</p>
-                    <ul class="list" id="currentList">
-                        
-                    </ul>
-                    <p class="subtitle has-text-centered">0 out of 4 is done</p>
-
-                </div>
+                    <div class="box">
+                        <p class="title has-text-centered">Today</p>
+                        <ul class="list" id="currentList">
+                            <!-- today's task goes here -->
+                        </ul>
+                        <p class="subtitle has-text-centered"><span id="numberOfCompletedTasks"></span> out of <span id="numberOfTotalTasks"></span> is done</p>
+                    </div>
                </div>
                
            </div>
