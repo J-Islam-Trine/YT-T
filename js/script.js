@@ -1,3 +1,19 @@
+document.addEventListener('DOMContentLoaded', initialSetup);
+
+function initialSetup()
+{
+    taskCounter();
+}
+
+//counts the number of tasks
+function taskCounter()
+{       
+        //set both value to zero
+        //get number of deleted elements
+        document.querySelector('#numberOfCompletedTasks').innerText = List.querySelectorAll('del').length;
+        //get number of all elements
+        document.querySelector('#numberOfTotalTasks').innerText = List.childElementCount;
+}
 
 //selectors
 const submitButton = document.querySelector('#submitButton');
@@ -18,6 +34,7 @@ function addTask(e)
     deleteButton.addEventListener('click', deleteTask);
     newElement.appendChild(deleteButton);
     currentList.appendChild(newElement);
+    taskCounter();
 }
 
 
@@ -28,6 +45,7 @@ function deleteTask(e)
         let deletedElement = elementCreator('del', taskTextContent, 'deletedTask is-block');
         let parent = e.target.parentElement.parentElement;
         parent.replaceChild(deletedElement, e.target.parentElement);
+        taskCounter();
     }
 
 //element creator
