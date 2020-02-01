@@ -23,3 +23,9 @@ ul#currentList li:hover
     background-color: azure;
     
 }
+
+del
+{
+    padding-left: 16px;
+    padding-top: 8px;
+}
