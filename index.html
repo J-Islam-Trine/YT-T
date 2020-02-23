@@ -4,20 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gradient.css">
     <title>YT&T</title>
 </head>
 <body>
     <!-- navigation bar -->
-    <nav class="navbar is-primary">
-        <div class="navbar-brand">
-            <a href="#" class="navbar-item"><img src="img/logo.png" class="image is-256x256" alt="""></a>
+    <nav class="navbar is-transparent">
+        <div class="navbar-brand is-centered">
+            <a href="#" class="navbar-item"><h3 class="title has-text-white">YT&T</h3></a>
         </div>
-        
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                        <button id="backgroundColorChanger" class="button is-transparent has-text-white"><i class="fas fa-paint-roller"></i> <span id="colorChangerButtonText">Change Background</span></button>
+                        <button class="button is-transparent is-white" id="aboutModalCaller">?</button>
+                </div>
+            </div>
+        </div>
     </nav>
+    <!-- navigation bar ends -->
     
+    <!-- about modal -->
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <div class="box">
+              <p><span class="is-red"><i class="fas fa-heart"></i></span> to <img src="img/uigradient.png" height="70" width="100" alt=""> for their awesome gradients. </p>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -31,7 +51,7 @@
                         <form action="#" class="form">
                             <div class="field">
                                 <div class="control">
-                                    <input type="text" name="" id="textInput" class="input" placeholder="To Do">
+                                    <input type="text" name="" id="textInput" class="input is-static" placeholder="To Do">
                                 </div>
                                 
                              </div>
@@ -53,11 +73,12 @@
     <section class="section">
         <div class="container">
            <div class="columns">
-               <div class="column is-offset-one-third is-one-third has-background-primary">
-                    <div class="box">
+               <div class="column is-offset-one-third is-one-third has-background-transparent">
+                    <div class="box is-transparent">
                         <p class="title has-text-centered">Today</p>
-                        <ul class="list" id="currentList">
+                        <ul class="list is-transparent" id="currentList">
                             <!-- today's task goes here -->
+                            
                         </ul>
                         <p class="subtitle has-text-centered"><span id="numberOfCompletedTasks"></span> out of <span id="numberOfTotalTasks"></span> is done</p>
                     </div>
@@ -66,7 +87,9 @@
            </div>
         </div>
     </section>
-    
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 <script src="js/script.js"></script>
+<script src="js/colorChanger.js"></script>
 </body>
 </html>
