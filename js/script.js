@@ -18,8 +18,14 @@ function initialSetup()
 {
     
     //load background from local storage
+    if(localStorage.getItem('backgroundcolor'))
+    {
     colorChanger('load');
-
+    }
+    else
+    {
+        colorChanger('fetch');
+    }
     //show a message if there's no task
     if(localStorage.getItem('currentList')=== null)
     {
