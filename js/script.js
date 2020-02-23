@@ -1,9 +1,26 @@
 //event handler of load time setup
-document.addEventListener('DOMContentLoaded', initialSetup);
+// document.addEventListener('DOMContentLoaded', );
+
+//Displays No Task Banner
+window.onload = function (){
+    //showing 'No Task' Banner 
+    initialSetup();
+    if (document.querySelector('#currentList').childElementCount === 0)
+    {
+        let noTaskBanner = elementCreator('li', 'No tasks added', 'list-item has-text-centered has-text-weight-bold is-medium', 'noTaskBanner');
+        document.querySelector('#currentList').append(noTaskBanner);
+    }  
+};
+
 
 //set the initial view and some valuues
 function initialSetup()
 {
+    
+    //load background from local storage
+    colorChanger('load');
+
+    //show a message if there's no task
     if(localStorage.getItem('currentList')=== null)
     {
         localStorage.setItem('currentList', JSON.stringify([ ]) );
@@ -29,9 +46,17 @@ submitButton.addEventListener('click', addTask);
 function addTask(e)
 {
     e.preventDefault();
+    
+    if (document.querySelector('#noTaskBanner'))
+    {
+        document.querySelector('#noTaskBanner').remove();
+    } 
     let inputBox = document.querySelector('#textInput');
-    let task = inputBox.value;
-    inputBox.value = ' ';
+    let task;
+    if(inputBox.value.length !== 0)
+    {
+    task = inputBox.value;
+    inputBox.value = '';
     let storedList = JSON.parse(localStorage.getItem('currentList'));
     storedList.push(task);
     localStorage.setItem('currentList', JSON.stringify(storedList));
@@ -44,6 +69,7 @@ function addTask(e)
     let currentList = document.querySelector('#currentList');
     currentList.appendChild(newElement);
     taskCounter();
+    }
 }
 
 //view tasks
@@ -83,3 +109,12 @@ function elementCreator(elementName, content, classes, id=' ')
     element.appendChild(document.createTextNode(content));
     return element;
 }
+
+//modal
+document.querySelector('#aboutModalCaller').addEventListener('click', (e)=> {
+    document.querySelector('.modal').classList.add('is-active');
+});
+
+document.querySelector('.modal-close').addEventListener('click', (e)=> {
+    document.querySelector('.modal').classList.remove('is-active');
+})
