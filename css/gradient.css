@@ -1,0 +1,30 @@
+:root
+{
+    --color1:  ;
+    --color2:  ;
+    --color3:  ;
+    --color4:  ;
+    --color5:  ;
+}
+
+.colors2, .navbar, #backgroundColorChanger
+{
+    background: linear-gradient(to right, var(--color1), var(--color2));
+}
+
+.colors3, .navbar, #backgroundColorChanger
+{
+    background: linear-gradient(to right, var(--color1), var(--color2), var(--color3));
+    
+}
+
+.colors4, .navbar, #backgroundColorChanger
+{
+    background: linear-gradient(to right, var(--color1), var(--color2), var(--color3), var(--color4));
+    
+}
+
+.colors5, .navbar, #backgroundColorChanger
+{
+    background: linear-gradient(to right, var(--color1), var(--color2), var(--color3), var(--color4), var(--color5));
+}
